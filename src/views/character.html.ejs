@@ -18,13 +18,16 @@
                 <h2> Specie: <%= data.species%></h2>
                 <h2> Type: <%= data.type%></h2>
                 <h2> Gender: <%= data.gender%></h2>
-                <%if (origin[0]=='0') {%>
+                <%if (!data.origin.id) {%>
                     <h2>Origin:  <%= data.origin.name%> </h2>
                 <%} else {%>
-                    <h2>Origin: <a href="/place/<%= origin[0]%> "> <%= data.origin.name%></a>  </h2>
+                    <h2>Origin: <a href="/place/<%= data.origin.id%> "> <%= data.origin.name%></a>  </h2>
                 <%}%>
-            
-                <h2>Location: <a href="/place/<%= location[0]%> "> <%= data.location.name%></a> </h2>
+                <%if (!data.location.id) {%>
+                    <h2>Location: <%= data.location.name%></h2>
+                <%} else {%>
+                    <h2>Location: <a href="/place/<%= data.location.id%> "> <%= data.location.name%></a> </h2>
+                <%}%>
         </div>
         <div class="box">
                 <h1>Appearences</h1>

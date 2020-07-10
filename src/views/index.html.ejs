@@ -17,7 +17,7 @@
                 <th>Code</th>
                 <th>Air Date</th>
               </tr>
-              <%data.results.forEach(i =>{ %>
+              <%data.forEach(i =>{ %>
               <tr>
                 <th><%= i.id %></th>
                 <th><a href="/episode/<%= i.id %>"><%= i.name   %></a></th>
